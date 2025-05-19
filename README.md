@@ -48,18 +48,18 @@ Approach:
 
 ## Challenges and Resolution
 
-1. Understanding the Data Relationships  
-   It took some time to understand how the tables were connected. I resolved this by reviewing column names and testing join conditions with sample queries.
+1. Understanding the Data Relationships:
+   It took some time to figure out how the tables were connected. I solved this by looking carefully at column names and testing simple queries to see how the data joined together.
 
-2. Calculating Frequency Accurately  
-   Some customers had transactions in only a few months, which could make their average look too low. To fix this, I calculated average transactions based only on months with activity. This gave a fairer view of how often each customer actually transacts.
+2. Calculating Frequency Accurately:  
+   Some customers only made transactions in a few months, which made their average transaction count seem too low. To fix this, I averaged transactions only for the months when they actually made transactions. This gave a fairer picture of how often they use their accounts.
 
-3. Frequency Classification Logic 
-   Classifying transaction frequency by monthly averages required nested subqueries and careful grouping. I broke it down into intermediate steps for better clarity and performance.
-
-4. Inactive Plans Filter 
-   Identifying truly inactive plans meant isolating only inflow transactions. I ensured the `transaction_type_id` filter was accurate and used `MAX()` to find the most recent transaction.
+3. Frequency Classification Logic:  
+   Grouping customers by how often they transact involved several steps. I split the problem into smaller parts and used queries within queries to make it easier to understand and faster to run.
    
+4. Inactive Plans Filter:  
+   To find truly inactive accounts, I focused only on money coming in (inflow transactions). I double-checked the transaction types used and found the most recent transaction date with `MAX()` to spot inactivity correctly.
+
 ---
  
- All queries are optimized for readability and performance, with comments explaining complex logic where applicable.
+
