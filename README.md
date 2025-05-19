@@ -1,6 +1,3 @@
-# DataAnalytics-Assessment
-
-
 # Data Analytics SQL Assessment
 
 ## Overview
@@ -9,7 +6,7 @@ This repository contains the SQL queries addressing four data analytics question
 ---
 
 ## Question 1: Customers with Both Savings and Investments
-**Approach:**  
+Approach:
 - Joined the `users_customuser` table with `plans_plan` and `savings_savingsaccount`.  
 - Filtered active plans (`status_id = 2`).  
 - Summed flags for savings and investments to identify customers with both.  
@@ -43,9 +40,7 @@ This repository contains the SQL queries addressing four data analytics question
 - Calculated tenure in months from user's join date to current date.  
 - Counted total transactions and average transaction amount.  
 - Applied simplified CLV formula:  
-  \[
-  CLV = \left(\frac{\text{total transactions}}{\text{tenure months}}\right) \times 12 \times \text{avg profit per transaction}
-  \]
+  `(monthly_txn_rate * 12 months) * (0.001 * avg_amount)`
 - Profit per transaction assumed as 0.1% of transaction amount.  
 - Sorted results by estimated CLV descending.
 
@@ -58,4 +53,4 @@ This repository contains the SQL queries addressing four data analytics question
 - **Data aggregation and joins:** Careful grouping was necessary to avoid duplication and ensure meaningful aggregation across related tables.
 
 ---
-
+## All queries are optimized for readability and performance, with comments explaining complex logic where applicable.
